@@ -16,18 +16,25 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.contrib.auth.views import LogoutView
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path, include
 
-
-from .views import home_page, about_page, contact_page, login_page, register_page
+from accounts.views import login_page, register_page
+from .views import home_page, about_page, contact_page
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    path(r'', home_page),
-    path(r'about/', about_page),
-    path(r'contact/', contact_page),
-    path(r'login/', login_page),
-    path(r'register/', register_page),
+    path(r'', home_page, name='home'),
+    path(r'about/', about_page, name='about'),
+    path(r'contact/', contact_page, name='contact'),
+    path(r'login/', login_page, name='login'),
+    path(r'logout/', LogoutView.as_view(), name='logout'),
+    path(r'cart/', include("carts.urls", namespace='cart')),
+    path(r'register/', register_page, name='register'),
+    path(r'bootstrap/', TemplateView.as_view(template_name='bootstrap/example.html')),
+    path(r'products/', include("products.urls", namespace='products')),
+    path(r'search/', include("search.urls", namespace='search')),
     path('admin/', admin.site.urls),
 ]
 
