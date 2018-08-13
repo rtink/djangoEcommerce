@@ -23,8 +23,8 @@ class ContactForm(forms.Form):
                 "placeholder": "Your message"
                 }))
 
-    def clean_email(self):
-        email = self.cleaned_data.get("email")
-        if not "example.com" in email:
-            raise forms.ValidationError("Email has to be example.com")
-        return email
+    # def clean_email(self):
+    #     email = self.cleaned_data.get("email")
+    #     if not "example.com" in email:
+    #         raise forms.ValidationError("Email has to be example.com")
+    #     return email

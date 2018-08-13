@@ -23,6 +23,8 @@ from django.views.generic import TemplateView
 
 from accounts.views import login_page, register_page, guest_register_view
 from addressess.views import checkout_address_create_view, checkout_address_reuse_view
+from carts.views import cart_detail_api_view
+
 from .views import home_page, about_page, contact_page
 
 
@@ -35,6 +37,7 @@ urlpatterns = [
     path(r'checkout/address/reuse/', checkout_address_reuse_view, name='checkout_address_reuse'),
     path(r'register/guest/', guest_register_view, name='guest_register'),
     path(r'logout/', LogoutView.as_view(), name='logout'),
+    path(r'api/cart/', cart_detail_api_view, name='api-cart'),
     path(r'cart/', include("carts.urls", namespace='cart')),
     path(r'register/', register_page, name='register'),
     path(r'bootstrap/', TemplateView.as_view(template_name='bootstrap/example.html')),
