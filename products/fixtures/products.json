@@ -1,0 +1,58 @@
+[
+{
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+        "title": "SuperComputer",
+        "slug": "supercomputer",
+        "description": "cool computer. iMac with 27\" monitor",
+        "price": "100.50",
+        "image": "",
+        "featured": true,
+        "active": true,
+        "timestamp": "2018-08-05T00:16:59.612Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+        "title": "Hat",
+        "slug": "hat",
+        "description": "cool black hat",
+        "price": "10.50",
+        "image": "products/3382971224/3382971224.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-05T00:17:36.457Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+        "title": "cake",
+        "slug": "cake",
+        "description": "cake picture",
+        "price": "1.75",
+        "image": "products/563844017/563844017.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-08-05T00:17:58.170Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+        "title": "T-shirt",
+        "slug": "t-shirt",
+        "description": "shirt with profile stick person",
+        "price": "39.99",
+        "image": "products/1245650684/1245650684.jpeg",
+        "featured": true,
+        "active": true,
+        "timestamp": "2018-08-05T00:18:46.061Z"
+    }
+}
+]
