@@ -25,7 +25,7 @@ SECRET_KEY = 'gw2vibmm+m*n%3s%z&_u$1g56lre1#m1u95j3#^5=^+m9xe$^d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -55,7 +55,7 @@ AUTH_USER_MODEL = 'accounts.User'
 FORCE_SESSION_TO_ONE = False
 FORCE_INACTIVE_USER_ENDSESSION = False
 
-MAILCHIMP_API_KEY = "4befbca9d38ecd3db6010391e0463c06-us19"
+MAILCHIMP_API_KEY = "827d442b82d2ab4a116643d23543a479-us19"
 MAILCHIMP_DATA_CENTER = "us19"
 MAILCHIMP_EMAIL_LIST_ID = "39218e72ee"
 
