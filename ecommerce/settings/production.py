@@ -30,7 +30,7 @@ EMAIL_USE_TLS = True
 # DEFAULT_FROM_EMAIL = 'Python ecommerce <rtinkham@live.com>'
 
 MANAGERS = (
-    ("rtinkham@live.com", "Rhonda Tinkham")
+    ("Rhonda Tinkham", "rtinkham@live.com"),
 )
 
 ADMINS = MANAGERS
