@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com']
 
@@ -64,7 +64,7 @@ MAILCHIMP_DATA_CENTER = "us19"
 MAILCHIMP_EMAIL_LIST_ID = os.environ.get("MAILCHIMP_EMAIL_LIST_ID")
 
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "sk_test_aYuKEkBup04q04ZyHwD0luQX")
-STRIPE_PUB_KEY = STRIPE_SECRET_KEY("STRIPE_PUB_KEY", 'pk_test_gD7XKtiSnIWDm16gk9497dRK')
+STRIPE_PUB_KEY = os.environ.get("STRIPE_PUB_KEY", "pk_test_gD7XKtiSnIWDm16gk9497dRK")
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
