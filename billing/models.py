@@ -6,7 +6,8 @@ from accounts.models import GuestEmail
 User = settings.AUTH_USER_MODEL 
 
 import stripe
-stripe.api_key = "sk_test_aYuKEkBup04q04ZyHwD0luQX"
+STRIPE_SECRET_KEY = getattr(setting, "STRIPE_SECRET_KEY", "sk_test_aYuKEkBup04q04ZyHwD0luQX")
+stripe.api_key = STRIPE_SECRET_KEY
 stripe.api_version = '2018-07-27'
 
 class BillingProfileManager(models.Manager):
