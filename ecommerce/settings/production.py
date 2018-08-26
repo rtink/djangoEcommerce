@@ -22,15 +22,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-EMAIL_HOST = 'smtp.live.com'
-EMAIL_HOST_USER = 'rtinkham@live.com' 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'rtinkham0408@gmail.com' 
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # DEFAULT_FROM_EMAIL = 'Python ecommerce <rtinkham@live.com>'
 
 MANAGERS = (
-    ("Rhonda Tinkham", "rtinkham@live.com"),
+    ("Rhonda Tinkham", "rtinkham0408@gmail.com"),
 )
 
 ADMINS = MANAGERS
@@ -66,6 +66,9 @@ INSTALLED_APPS = [
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
+LOGIN_URL = '/login/'
+LOGIN_URL_REDIRECT = '/'
+LOGOUT_URL = '/logout/'
 
 FORCE_SESSION_TO_ONE = False
 FORCE_INACTIVE_USER_ENDSESSION = False

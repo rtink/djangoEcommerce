@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.conf.urls import url 
 from django.urls import path, re_path, include
 from django.contrib import admin
 from django.contrib.auth.views import LogoutView
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 
 from accounts.views import LoginView, RegisterView, guest_register_view
 from addressess.views import checkout_address_create_view, checkout_address_reuse_view
@@ -33,6 +33,9 @@ from .views import home_page, about_page, contact_page
 urlpatterns = [
     path(r'', home_page, name='home'),
     path(r'about/', about_page, name='about'),
+    path(r'^accounts/$', RedirectView.as_view(url='/account')),
+    path(r'account/', include("accounts.urls", namespace='account')),
+    path(r'accounts/', include("accounts.passwords.urls")),
     path(r'contact/', contact_page, name='contact'),
     path(r'login/', LoginView.as_view(), name='login'),
     path(r'checkout/address/create/', checkout_address_create_view, name='checkout_address_create'),
@@ -47,6 +50,7 @@ urlpatterns = [
     path(r'bootstrap/', TemplateView.as_view(template_name='bootstrap/example.html')),
     path(r'products/', include("products.urls", namespace='products')),
     path(r'search/', include("search.urls", namespace='search')),
+    path(r'^settings/$', RedirectView.as_view(url='/account')),
     path(r'settings/email/', MarketingPreferenceUpdateView.as_view(), name='marketing-pref'),
     path(r'webhooks/mailchimp/', MailchimpWebhookView.as_view(), name='webhooks-mailchimp'),
     path('admin/', admin.site.urls),

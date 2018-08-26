@@ -19,7 +19,7 @@ def about_page(request):
         "title": "About eCommerce",
         "content": "about us..."
     }
-    return render(request, "home_page.html", context)
+    return render(request, "about/about.html", context)
 
 def contact_page(request):
     contact_form = ContactForm(request.POST or None)
